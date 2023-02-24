@@ -3,6 +3,11 @@ import "./App.css";
 
 function App() {
   const [todo, setTodo] = useState([]);
+  const [todoText, setTodoText] = useState("");
+
+  const handleTodoTextChange = (event) => {
+    setTodoText(event.target.value);
+  };
 
   return (
     <div className="App">
@@ -17,7 +22,12 @@ function App() {
       <form>
         <div className="input-container">
           <label htmlFor="todo-input">New Todo</label>
-          <input id="todo-input" type="text" />
+          <input
+            id="todo-input"
+            type="text"
+            onChange={handleTodoTextChange}
+            value={todoText}
+          />
         </div>
         <button>Add</button>
       </form>
