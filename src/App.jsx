@@ -16,13 +16,31 @@ function App() {
     setTodo(newTodo);
   };
 
+  const deleteTodo = (index) => {
+    const newTodo = [...todo];
+    newTodo.splice(index, 1);
+    setTodo(newTodo);
+  };
+
   return (
     <div className="App">
       <h1>To Do List</h1>
 
       <ul className="todo-list">
-        {todo.map((item) => {
-          return <li>{item}</li>;
+        {todo.map((item, index) => {
+          return (
+            <li>
+              {item}{" "}
+              <button
+                className="remove-todo-button"
+                onClick={() => {
+                  deleteTodo(index);
+                }}
+              >
+                x
+              </button>
+            </li>
+          );
         })}
       </ul>
 
