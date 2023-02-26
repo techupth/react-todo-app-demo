@@ -9,6 +9,13 @@ function App() {
     setTodoText(event.target.value);
   };
 
+  const addTodo = (event) => {
+    event.preventDefault();
+    const newTodo = [...todo];
+    newTodo.push(todoText);
+    setTodo(newTodo);
+  };
+
   return (
     <div className="App">
       <h1>To Do List</h1>
@@ -29,7 +36,7 @@ function App() {
             value={todoText}
           />
         </div>
-        <button>Add</button>
+        <button onClick={addTodo}>Add</button>
       </form>
     </div>
   );
