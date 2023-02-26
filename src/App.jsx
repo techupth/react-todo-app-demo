@@ -16,9 +16,9 @@ function App() {
     setTodo(newTodo);
   };
 
-  const deleteTodo = (index) => {
+  const deleteTodo = (todoIndex) => {
     const newTodo = [...todo];
-    newTodo.splice(index, 1);
+    newTodo.splice(todoIndex, 1);
     setTodo(newTodo);
   };
 
@@ -30,7 +30,7 @@ function App() {
         {todo.map((item, index) => {
           return (
             <li>
-              {item}{" "}
+              {item}
               <button
                 className="remove-todo-button"
                 onClick={() => {
